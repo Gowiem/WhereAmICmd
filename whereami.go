@@ -36,11 +36,11 @@ type LocationResult struct {
 	Ip string `json:"ip"`
 }
 
-// Uploads the user's approximate location to whereami.mattgowie.com
+// Uploads the user's approximate location to Gowiem/whereami.com
 //
 // 1. Fetches the client's IP Address from icanhazip.com
 // 2. Does a lookup of the fetched IP Address from the ip-api.com API
-// 3. POSTs the client's location infomration to whereami.mattgowie.com
+// 3. POSTs the client's approximate location information to Gowiem/whereami.com
 func main() {
 	client := resty.New()
 
@@ -77,8 +77,8 @@ func main() {
 	fmt.Println("Result: ", result)
 
 	post_resp, post_err := client.R().
-      SetBody(result).
-      Post("https://docker-micro.mattgowie.com/location")
+		SetBody(result).
+		Post("https://docker-micro.mattgowie.com/location")
 
 	if post_err != nil {
 		log.Fatal(post_err)

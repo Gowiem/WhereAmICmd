@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"time"
-	// "encoding/json"
 	"github.com/go-resty/resty/v2"
 )
 
